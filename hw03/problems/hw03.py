@@ -124,12 +124,24 @@ def repeated(f, n):
     5
     """
     "*** YOUR CODE HERE ***"
+    def repeat_f_n(x):
+        if n == 0:
+            return x
+        else:
+            return f(repeated(f, n-1)(x))
+    return repeat_f_n
 
 def compose1(f, g):
     """Return a function h, such that h(x) = f(g(x))."""
     def h(x):
         return f(g(x))
     return h
+#######################
+# Challenge Questions #
+#######################
+
+    
+
 
 ###################
 # Extra Questions #
@@ -138,6 +150,8 @@ def compose1(f, g):
 challenge_question_program = """
 "*** YOUR CODE HERE ***"
 """
+
+    
 
 def zero(f):
     return lambda x: x
