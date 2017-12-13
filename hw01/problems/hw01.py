@@ -45,7 +45,7 @@ def largest_factor(n):
         i = i - 1
     return i 
 
-def if_function(condition, true_result, false_result):
+def if_function(true_result, false_result, condition):
     """Return true_result if condition is a true value, and
     false_result otherwise.
 
@@ -74,14 +74,14 @@ def with_if_statement():
     else:
         return f()
 
-a = 1
+a = [1]
 
 def with_if_function():
-    return if_function(c(), t(), f())
+    return if_function(t(), f(), c())
 
 def c():
     "*** YOUR CODE HERE ***"
-    return True
+    return bool(a)
 
 def t():
     "*** YOUR CODE HERE ***"
@@ -89,7 +89,7 @@ def t():
 
 def f():
     "*** YOUR CODE HERE ***"
-    a = 2
+    a.pop()
     return 0
 
 def hailstone(n):
