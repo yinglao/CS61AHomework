@@ -103,7 +103,12 @@ def balanced(m):
     False
     """
     "*** YOUR CODE HERE ***"
-    return 
+    sum = 0
+    i = 0
+    for side in sides(m):
+        sum += (length(side) * total_weight(end(side))) * (-1)**(i)
+        i += 1
+    return sum == 0 and all([balanced(submobile) for submobile in [end(subside) for subside in sides(m)]])
 
 def with_totals(m):
     """Return a mobile with total weights stored as the root of each mobile.
