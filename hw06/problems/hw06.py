@@ -126,6 +126,20 @@ def with_totals(m):
     [None, None]
     """
     "*** YOUR CODE HERE ***"
+    if is_weight(m):
+        return m
+    left_side = sides(m)[0]   #To decompose the original structure before reconstruction
+    right_side = sides(m)[1]
+    left_end = end(left_side)
+    left_length = length(left_side)
+    right_length = length(right_side)
+    right_end = end(right_side)
+    new_left_end = with_totals(left_end)
+    new_right_end = with_totals(right_end)
+    new_left_side = tree(left_length, [new_left_end])
+    new_right_side = tree(right_length, [new_right_end])
+    
+    return tree(total_weight(m), [new_left_side, new_right_side])
 
 ############
 # Mutation #
